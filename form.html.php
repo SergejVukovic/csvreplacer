@@ -4,6 +4,7 @@
     <title>Search</title>
 </head>
 <body>
+<h3><?php if(isset($error)){echo $error;}?></h3>
 <h3>Number of unique word:<?php if($uniqueCounter > 1) { echo $uniqueCounter; }?></h3>
 <form action="" method="post">
     <label>Enter the name of column you want to search:</label><br>
