@@ -1,32 +1,31 @@
 <?php
 ini_set('max_execution_time',3000);
+
 require 'vendor/phpoffice/phpexcel/Classes/PHPExcel/IOFactory.php';
-$dataFfile = 'test1.xls';
+$dataFfile = 'ogasi.xls';
 $objPHPExcel = PHPExcel_IOFactory::load($dataFfile);
 $sheet = $objPHPExcel->getActiveSheet();
 
-$counter =0;
+$uniqueCounter =0;
 $collection = array();
-
-
 thruTable('A');
 
-echo $counter;
-
+include 'form.html.php';
 function thruTable($row){
     global $sheet;
     $column = 1;
-    $limit = 500;
-    while (($row.$column) < $row.$limit) {
+    $limit = 50;
+    while ($column < $limit) {
         $cell = $sheet->getCell($row . $column)->getValue();
         $word = explode(" ",$cell);
         addUniqeWord($word);
         if ($cell == '' && ($sheet->getCell($row.($column+1))->getValue())== '') {
            return true;
         }
-        $column++;
         if($column == $limit)
-            return false; //ovde si stao treba nastaviti , skontaj kako da se poziva na svakih 500 .
+            return false;
+
+        $column++;
     }
 }
 
@@ -49,13 +48,13 @@ function checker ($word)
     {
         return false;
     }
-    global $collection,$counter;
+    global $collection,$uniqueCounter;
     for ($i=0;$i<count($collection);$i++) {
         if ($collection[$i] == $word){
             return false;
         }
     }
-    $counter++;
+    $uniqueCounter++;
     return true;
 }
 function clean($string) {
@@ -64,9 +63,4 @@ function clean($string) {
     $string=rtrim($string,',');
     $string = str_replace('/[0-9]+/','',$string);
     return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-}
-foreach ($collection as $line)
-{
-    if(!is_numeric($line))
-        echo clean($line)."<br>";
 }
