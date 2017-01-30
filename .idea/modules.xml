@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/readexls.iml" filepath="$PROJECT_DIR$/.idea/readexls.iml" />
+=======
       <module fileurl="file://$PROJECT_DIR$/.idea/readxls.iml" filepath="$PROJECT_DIR$/.idea/readxls.iml" />
+>>>>>>> 93d2ce3ce74dfe1d5c6058b46eeca8ca771215c0
     </modules>
   </component>
 </project>

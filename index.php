@@ -8,13 +8,19 @@ $sheet = $objPHPExcel->getActiveSheet();
 
 $uniqueCounter =0;
 $collection = array();
-thruTable('A');
+if(isset($_POST['column']) && isset($_POST['limit']))
+{
+    thruTable($_POST['column'],$_POST['limit']);
+
+}else
+{
+    $error = "please enter values in the field";
+}
 
 include 'form.html.php';
-function thruTable($row){
+function thruTable($row,$limit){
     global $sheet;
     $column = 1;
-    $limit = 50;
     while ($column < $limit) {
         $cell = $sheet->getCell($row . $column)->getValue();
         $word = explode(" ",$cell);
