@@ -5,20 +5,12 @@
 </head>
 <body>
 <h3><?php if(isset($error)){echo $error;}?></h3>
-<h3>Number of unique word:<?php if($uniqueCounter > 1) { echo $uniqueCounter; }?></h3>
+<h3>Number of unique word:</h3>
 <form action="" method="post">
-    <label>Enter the name of column you want to search:</label><br>
+    <label>Enter the number of column you want to search:</label><br>
     <input type="text" name="column">
-    <br><label>How many rows do you want to search:</label><br>
-    <input type="number" name="limit">
     <button stype="submit">Search</button>
+    <p>hint(16,384 columns represented as letters from A - XFD (last column).)</p>
 </form>
-
-        <?php foreach ($collection as $word): ?>
-
-            <?php echo $word."<br>"; ?>
-
-        <?php endforeach; ?>
-
 </body>
 </html>
