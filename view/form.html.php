@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Search</title>
@@ -37,6 +36,7 @@
         </table>
 </table>
 <?php endif; ?>
+<table>
 
 </body>
 </html>
