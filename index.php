@@ -1,5 +1,4 @@
 <?php
-upload_max_filesize(10000);
 ini_set('display_errors', 1); error_reporting(~0);
 include "addons/DataSource.php";
 $fileUploaded = null;
