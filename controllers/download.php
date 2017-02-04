@@ -21,7 +21,7 @@ if(isset($_POST["filename"])) {
             // Change the mime type if the file is not PDF
             header('Content-Type: application/' . $extension);
             // Make the browser display the Save As dialog
-            header('Content-Disposition: attachment; filename=' . $filename);
+            header('Content-Disposition: attachment; filename=' . $filename.".csv");
             readfile($download_file);
             exit;
         } else {
