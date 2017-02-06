@@ -35,13 +35,13 @@ function cleanAccentedLetters($word)
     $str = strtr( $word, $unwanted_array );
     return $str;
 }
-function replaceWordsInColumn($stringArray,$dbresoult,$replaceCol)
+function replaceWordsInColumn ($row,$searchWord,$replaceWords,$replaceCol)
 {
-    foreach ($dbresoult as $resoult)
+    for($i = 0;$i<count($searchWord);$i++)
     {
-        $stringArray[$replaceCol] = strtolower($stringArray[$replaceCol]);
-        $stringArray[$replaceCol] = cleanAccentedLetters($stringArray[$replaceCol]);
-        $stringArray[$replaceCol] = str_replace($resoult["source"],$resoult["target"],$stringArray[$replaceCol]);
+        $row[$replaceCol] = strtolower($row[$replaceCol]);
+        $row[$replaceCol] = cleanAccentedLetters($row[$replaceCol]);
+        $row[$replaceCol] = str_replace($searchWord[$i],$replaceWords[$i],$row[$replaceCol]);
     }
-    return $stringArray;
+    return $row;
 }
