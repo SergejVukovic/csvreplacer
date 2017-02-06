@@ -1,5 +1,5 @@
 <h3>Number of words found:<?php echo count($result); ?></h3>
-<table class="table hover-table">
+<table class="table table-striped">
     <tr>
         <th>Word</th>
         <th>Counter</th>
@@ -20,7 +20,11 @@
     <input type="hidden" name="col1" value=<?php echo $col ?>>
     <input type="hidden" name="col2" value=<?php echo $col2 ?>>
     <?php if($fileUploaded == null): ?>
-        <lable>Input the name of the new file:</lable><input type="text" name="newfilename">
+        <div class="col-md-2">
+            <lable>Input the name of the new file:</lable>
+            <input type="text" class="form-control" name="newfilename">
+        </div>
+        <br/>
+        <input type="submit" name="submit" Value="Replace" class="btn btn-success">
     <?php endif; ?>
-    <input type="submit" name="submit" Value="Replace">
 </table>

@@ -6,7 +6,7 @@
     <form action="../controllers/download.php" method="post">
         <label>Press button to download your new file!</label>
         <input type="hidden" name="filename" value="<?php echo $newFileName ?>">
-        <button type="submit">Download</button>
+        <button type="submit" class="btn btn-success">Download</button>
     </form>
 </body>
 </html>

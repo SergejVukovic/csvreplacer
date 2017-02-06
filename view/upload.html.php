@@ -1,14 +1,14 @@
-<table width="600">
-    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
+<div class="col-md-2">
+    <table class="table">
+        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
 
-        <tr>
-            <td width="20%">Select file</td>
-            <td width="80%"><input type="file" name="file" id="file" /></td>
-        </tr>
+            <tr class="success">
+                <td><input type="file" name="file" id="file" /></td>
+            </tr>
 
-        <tr>
-            <td>Submit</td>
-            <td><input type="submit" name="submit" /></td>
-        </tr>
-    </form>
-</table>
+            <tr class="success">
+                <td><input type="submit" name="submit" class="btn btn-success" /></td>
+            </tr>
+        </form>
+    </table>
+</div>
